@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资讯裁判结果</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --card: #fffdf8;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d6d3d1;
+      --head: #efe7d8;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #f3efe6 0%, #fbfaf7 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .wrap {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    h1, h2, h3 {
+      line-height: 1.35;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-top: 28px;
+      margin-bottom: 14px;
+    }
+    h3 {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    ul {
+      margin: 0 0 16px 0;
+      padding-left: 22px;
+    }
+    li {
+      margin: 6px 0;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 14px 0 24px;
+      background: #fff;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 1200px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      vertical-align: top;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background: var(--head);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    code {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 1px 6px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 90%;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>资讯裁判结果</h1>
+
+      <h2>一、文章质量评估</h2>
+
+      <h3>1. 信息源结构</h3>
+      <ul>
+        <li>主要信息源：公告、权威媒体新闻、政策口径、行业会议信息、复盘性归纳、少量疑似小作文/供应链传闻。</li>
+        <li>是否混合公告/新闻/小作文/复盘观点：是，且混合度较高。</li>
+        <li>是否存在来源不明内容：存在，主要在“豆包预计上线”“苹果折叠屏备货”“出海爆单”“航天大V晒图”等条目。</li>
+      </ul>
+
+      <h3>2. 逻辑合理性</h3>
+      <ul>
+        <li>逻辑链条是否清楚：部分清楚。业绩预告类最清楚；跨市场映射、主题发酵类较松散。</li>
+        <li>是否存在过度推演：存在，如把海外事件、行业会议信息直接外推到 A 股板块。</li>
+        <li>是否存在概念擦边：存在，如“宇树科技IPO=A股人形机器人第一股来了”更偏题材情绪表达。</li>
+        <li>是否存在把传闻当事实：局部存在，尤其“预计上线”“供应链备货”“爆单”等表述需要降级。</li>
+      </ul>
+
+      <h3>3. 短线影响力</h3>
+      <ul>
+        <li>是否命中当前主线：部分命中，机器人、AI、算力、半导体、业绩线都具备主线属性。</li>
+        <li>是否具备传播性：具备，尤其机器人、算力辟谣、AI应用、折叠屏、业绩预告。</li>
+        <li>是否具备不可证伪窗口：部分具备，尤其供应链传闻、出海爆单、会展预期。</li>
+        <li>是否可能形成高影响低可信观察：是，主要集中在折叠屏、AI新品上线、商业航天截图、出海爆单。</li>
+      </ul>
+
+      <h3>4. 风险与降级点</h3>
+      <ul>
+        <li>澄清风险：高，传闻类条目容易被公司、媒体或后续公告澄清。</li>
+        <li>监管风险：中，涉及 IPO、政策、期货交易、关税口径等需以后续正式文件为准。</li>
+        <li>盘面证伪风险：高，若板块高开低走、核心股放量滞涨，情绪叙事会快速失效。</li>
+        <li>业务不匹配风险：中，文章未给出多数 A 股映射链，容易出现“题材对、标的不对”。</li>
+        <li>旧闻重炒风险：中，部分海外产业链、折叠屏、商业航天题材存在反复重炒可能。</li>
+      </ul>
+
+      <h3>5. 文章总体评级</h3>
+      <ul>
+        <li>文章可信度：中等偏下到中等，强项在公告类，弱项在传闻和复盘拼接。</li>
+        <li>文章短线影响力：中等偏高。</li>
+        <li>是否适合作为资讯裁判输入：适合，但必须先做拆源、降级、排雷。</li>
+        <li>主要问题：来源混杂、事实与推演夹杂、部分无明确原始出处、跨市场映射偏快。</li>
+      </ul>
+
+      <h2>二、资讯裁判结果</h2>
+
+      <h3>表一：资讯裁判表</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>来源类型</th>
+              <th>摘要</th>
+              <th>对应方向</th>
+              <th>对应个股</th>
+              <th>信息性质</th>
+              <th>催化类型</th>
+              <th>影响级别</th>
+              <th>H证据硬度</th>
+              <th>L逻辑合理性</th>
+              <th>C环境适配</th>
+              <th>W证伪窗口</th>
+              <th>I影响预期</th>
+              <th>最终评级</th>
+              <th>验证点</th>
+              <th>证伪触发点</th>
+              <th>降级风险</th>
+              <th>处理结果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>7月2日</td><td>新闻</td><td>宇树科技获科创板IPO注册，叠加7月7日巴黎具身AI峰会与Optimus演示预期</td><td>机器人/具身智能</td><td>宇树科技、特斯拉</td><td>事实+推演+情绪</td><td>技术突破</td><td>板块级</td><td>H4</td><td>L4</td><td>C5</td><td>W3</td><td>I5</td><td>SS</td><td>核验证监会注册信息、招股书、峰会议程与演示安排</td><td>IPO进度变动、会展演示不及预期、板块高开低走</td><td>宇树非A股直接映射不足；会展预期易情绪化</td><td>观察</td></tr>
+            <tr><td>7月2日</td><td>新闻</td><td>官方/权威媒体对“Meta带崩科技股、算力过剩”表述进行辟谣，强调国内算力供需仍紧</td><td>算力</td><td>Meta、美光、康宁、特斯拉</td><td>事实+观点+风险</td><td>澄清</td><td>板块级</td><td>H4</td><td>L4</td><td>C4</td><td>W2</td><td>I4</td><td>SS</td><td>核验权威媒体原文、行业人士原话、国内订单/上架率/机柜利用率数据</td><td>后续权威数据转弱、龙头业绩不及预期、板块放量滞涨</td><td>仍属媒体转述，不是A股公司公告；海外股下跌会压制情绪</td><td>观察</td></tr>
+            <tr><td>7月2日</td><td>政策</td><td>扩大消费“十五五”规划近期发布，体育强国“十五五”规划获批</td><td>大消费/体育</td><td>未提供</td><td>事实+推演</td><td>政策</td><td>板块级</td><td>H3</td><td>L4</td><td>C3</td><td>W3</td><td>I3</td><td>A</td><td>核验正式规划文件与部委发布口径</td><td>正式文件弱于预期、细则缺位、板块不跟随</td><td>政策到业绩传导慢；个股映射未提供</td><td>观察</td></tr>
+            <tr><td>7月2日</td><td>公告</td><td>昆仑万维称天工AI在2026Q2 ARR超过8亿美元</td><td>AI应用</td><td>昆仑万维</td><td>事实</td><td>业绩</td><td>个股级</td><td>H5</td><td>L4</td><td>C4</td><td>W2</td><td>I4</td><td>SS</td><td>核验公司公告/投资者材料、ARR口径说明</td><td>后续财报兑现弱、市场质疑口径、股价高开低走</td><td>ARR不等于利润，估值扩散可能受限</td><td>弹性支撑</td></tr>
+            <tr><td>7月2日</td><td>新闻</td><td>豆包视频生成模型Seedance 2.5预计7月6日上线体验中心，一周后开放API</td><td>AI应用/多模态</td><td>未提供</td><td>传闻+推演</td><td>技术突破</td><td>板块级</td><td>H2</td><td>L4</td><td>C4</td><td>W4</td><td>I4</td><td>A</td><td>核验官方产品公告、开放页面、API文档</td><td>官方未上线、时间推迟、功能不及预期</td><td>“预计”表述非正式公告，易被证伪</td><td>需要公告验证</td></tr>
+            <tr><td>7月2日晚</td><td>公告</td><td>锐捷网络预计Q2净利润环比增长288%-410%，数据中心交换机业务大增</td><td>算力/交换机/业绩线</td><td>锐捷网络</td><td>事实</td><td>业绩</td><td>个股级</td><td>H5</td><td>L5</td><td>C4</td><td>W1</td><td>I4</td><td>SS</td><td>核验业绩预告、分业务表述、后续半年报</td><td>半年报低于预告中枢、订单不可持续、板块回落</td><td>短期已临近兑现，预期差会收缩</td><td>主攻支撑</td></tr>
+            <tr><td>7月2日晚</td><td>公告</td><td>星网锐捷预计半年报净利同比增长46.27%-102.90%，含交换机增长及非经常项贡献</td><td>算力/交换机/业绩线</td><td>星网锐捷</td><td>事实+风险</td><td>业绩</td><td>个股级</td><td>H5</td><td>L5</td><td>C4</td><td>W1</td><td>I4</td><td>SS</td><td>核验业绩预告、子公司贡献、非经常损益占比</td><td>后续半年报不及预告、非经常收益占比过高</td><td>需区分经营改善与一次性收益</td><td>主攻支撑</td></tr>
+            <tr><td>7月2日晚</td><td>公告</td><td>广钢气体预计上半年净利同比增长87%-138%，氦气贡献增量</td><td>气体/业绩线</td><td>广钢气体</td><td>事实</td><td>业绩</td><td>个股级</td><td>H5</td><td>L4</td><td>C3</td><td>W1</td><td>I3</td><td>S</td><td>核验业绩预告、氦气量价变化、半年报</td><td>利润兑现不及预告、气体价格回落</td><td>板块扩散性相对有限</td><td>弹性支撑</td></tr>
+            <tr><td>7月2日晚</td><td>公告</td><td>永和股份预计上半年净利同比增长69.51%-102.68%</td><td>业绩线</td><td>永和股份</td><td>事实</td><td>业绩</td><td>个股级</td><td>H5</td><td>L4</td><td>C3</td><td>W1</td><td>I3</td><td>S</td><td>核验业绩预告及半年报</td><td>兑现不及预期、景气持续性不足</td><td>文中未给增长驱动细节</td><td>弹性支撑</td></tr>
+            <tr><td>7月2日晚</td><td>公告</td><td>奥飞娱乐预计上半年净利同比增长305.30%-413.38%</td><td>IP/业绩线</td><td>奥飞娱乐</td><td>事实</td><td>业绩</td><td>个股级</td><td>H5</td><td>L3</td><td>C3</td><td>W1</td><td>I3</td><td>A</td><td>核验业绩预告、利润结构、去年低基数因素</td><td>扣非弱、一次性收益扰动、盘面不认可</td><td>高增未必等于高质量增长</td><td>观察</td></tr>
+            <tr><td>7月2日晚</td><td>公告</td><td>盐湖股份预计上半年净利同比增长131.38%-142.95%</td><td>资源品/锂盐</td><td>盐湖股份</td><td>事实</td><td>业绩</td><td>个股级</td><td>H5</td><td>L4</td><td>C3</td><td>W1</td><td>I3</td><td>S</td><td>核验业绩预告、锂盐价格与销量、半年报</td><td>商品价格回落、业绩不及中枢</td><td>商品股更受价格周期约束</td><td>弹性支撑</td></tr>
+            <tr><td>7月2日</td><td>新闻</td><td>深市公布半年报预约时间，沃华医药、优彩资源、昊志机电率先披露</td><td>中报时间线</td><td>沃华医药、优彩资源、昊志机电</td><td>事实</td><td>业绩</td><td>情绪级</td><td>H4</td><td>L2</td><td>C3</td><td>W1</td><td>I2</td><td>B</td><td>核验交易所预约披露表</td><td>公司业绩无超预期、时间先发但内容平淡</td><td>仅时间表，不等于业绩催化</td><td>仅记录</td></tr>
+            <tr><td>7月2日</td><td>新闻+自媒体</td><td>海洋二号E星发射成功、亚马逊卫星发射、航天大V晒回收船</td><td>商业航天</td><td>亚马逊</td><td>事实+传闻+推演</td><td>技术突破</td><td>板块级</td><td>H3</td><td>L3</td><td>C3</td><td>W3</td><td>I3</td><td>B</td><td>核验官方发射通稿、卫星任务信息、装备图源</td><td>官方未进一步确认、自媒体图片失真、板块冲高回落</td><td>晒图部分来源弱，A股映射未给出</td><td>观察</td></tr>
+            <tr><td>7月2日</td><td>新闻</td><td>苹果要求供应商备货约1000万台折叠iPhone，秋季发布后小批量发货</td><td>折叠屏/消费电子</td><td>苹果</td><td>传闻+推演</td><td>技术突破</td><td>板块级</td><td>H2</td><td>L3</td><td>C4</td><td>W4</td><td>I4</td><td>A</td><td>核验苹果官方、供应链公告、量产节奏</td><td>苹果澄清、供应链未披露、量产推迟</td><td>典型供应链传闻，证据弱但传播强</td><td>需要公告验证</td></tr>
+            <tr><td>7月2日</td><td>新闻</td><td>国产拖拉机热销海外、变压器“全球爆单”</td><td>出海/电力设备/农机</td><td>未提供</td><td>观点+情绪+推演</td><td>订单</td><td>板块级</td><td>H2</td><td>L3</td><td>C3</td><td>W4</td><td>I3</td><td>B</td><td>核验海关出口数据、公司订单公告、月度经营数据</td><td>出口数据不支持、订单未落地、仅媒体标题党</td><td>未给公司与数据，易旧闻重炒</td><td>观察</td></tr>
+            <tr><td>7月2日</td><td>新闻</td><td>韩国加大半导体投资、Anthropic拟自研芯片、软银推Neocloud、ASML上调指引、三星代工选择性接单</td><td>半导体/AI算力</td><td>三星电子、SK海力士、Anthropic、软银、ASML、OpenAI</td><td>事实+推演</td><td>供需缺口</td><td>板块级</td><td>H3</td><td>L4</td><td>C4</td><td>W3</td><td>I4</td><td>S</td><td>核验公司公告、外媒原文、指引调整与资本开支信息</td><td>后续资本开支收缩、行业数据走弱、板块高开低走</td><td>多为海外链条，对A股映射需要二次验证</td><td>观察</td></tr>
+            <tr><td>7月2日</td><td>政策</td><td>商务部原则同意将相关农产品纳入对等降税框架安排</td><td>农产品/贸易</td><td>未提供</td><td>事实+推演</td><td>政策</td><td>板块级</td><td>H4</td><td>L3</td><td>C2</td><td>W2</td><td>I2</td><td>B</td><td>核验商务部原文与后续细则</td><td>政策细则弱化、市场不交易该方向</td><td>对A股短线映射不直接</td><td>仅记录</td></tr>
+            <tr><td>7月2日</td><td>数据异动</td><td>6月非农就业增加5.7万人，市场预期美联储推迟加息</td><td>宏观/风险偏好</td><td>未提供</td><td>事实+观点</td><td>情绪扩散</td><td>情绪级</td><td>H3</td><td>L3</td><td>C3</td><td>W1</td><td>I2</td><td>B</td><td>核验非农数据原文与利率定价变化</td><td>后续通胀或联储口径反转</td><td>宏观到A股板块传导不稳定</td><td>仅记录</td></tr>
+            <tr><td>7月3日</td><td>政策</td><td>广期所引入境外交易者参与碳酸锂期货及期权交易</td><td>碳酸锂/资源品</td><td>盐湖股份</td><td>事实+风险</td><td>监管</td><td>板块级</td><td>H4</td><td>L4</td><td>C3</td><td>W1</td><td>I3</td><td>A</td><td>核验广期所正式通知、成交与持仓变化</td><td>流动性未改善、价格波动反向、监管进一步提示</td><td>更偏交易机制变化，不直接等于业绩改善</td><td>观察</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>表二：股票映射表</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>代码</th>
+              <th>对应方向</th>
+              <th>触发资讯</th>
+              <th>H证据硬度</th>
+              <th>L逻辑合理性</th>
+              <th>C环境适配</th>
+              <th>W证伪窗口</th>
+              <th>I影响预期</th>
+              <th>最终评级</th>
+              <th>信息性质</th>
+              <th>可验证依据</th>
+              <th>证伪触发点</th>
+              <th>风险点</th>
+              <th>处理结果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>宇树科技</td><td>未提供代码</td><td>机器人/具身智能</td><td>IPO注册+行业峰会预期</td><td>H4</td><td>L4</td><td>C5</td><td>W3</td><td>I5</td><td>SS</td><td>事实+推演</td><td>证监会注册信息、招股书、峰会资料</td><td>IPO进度变化、演示不及预期</td><td>非A股直接映射有限</td><td>观察</td></tr>
+            <tr><td>特斯拉</td><td>未提供代码</td><td>机器人/海外参照</td><td>Optimus Gen 3欧洲首秀；文中亦提及股价下跌</td><td>H3</td><td>L4</td><td>C4</td><td>W2</td><td>I4</td><td>A</td><td>事实+情绪</td><td>峰会议程、演示视频、行情数据</td><td>演示不及预期、海外科技股继续走弱</td><td>海外映射到A股有折价</td><td>观察</td></tr>
+            <tr><td>Meta</td><td>未提供代码</td><td>算力/海外参照</td><td>“算力过剩”相关辟谣</td><td>H4</td><td>L4</td><td>C4</td><td>W2</td><td>I4</td><td>A</td><td>事实+观点</td><td>权威媒体原文、行业采访</td><td>后续资本开支放缓</td><td>海外逻辑不等于国内兑现</td><td>观察</td></tr>
+            <tr><td>美光</td><td>未提供代码</td><td>算力/半导体参照</td><td>文中提及昨晚跌超5%</td><td>H3</td><td>L2</td><td>C2</td><td>W1</td><td>I1</td><td>C</td><td>情绪</td><td>行情数据</td><td>海外科技股反弹</td><td>仅价格波动，映射弱</td><td>仅记录</td></tr>
+            <tr><td>康宁</td><td>未提供代码</td><td>海外科技参照</td><td>文中提及暴跌10%</td><td>H3</td><td>L2</td><td>C2</td><td>W1</td><td>I1</td><td>C</td><td>情绪</td><td>行情数据</td><td>价格修复</td><td>与A股主线对应弱</td><td>仅记录</td></tr>
+            <tr><td>昆仑万维</td><td>未提供代码</td><td>AI应用</td><td>ARR超8亿美元公告</td><td>H5</td><td>L4</td><td>C4</td><td>W2</td><td>I4</td><td>SS</td><td>事实</td><td>公司公告、财报口径</td><td>财报兑现不及预期</td><td>ARR不等于利润</td><td>弹性支撑</td></tr>
+            <tr><td>锐捷网络</td><td>未提供代码</td><td>算力/交换机/业绩线</td><td>Q2净利环比大增公告</td><td>H5</td><td>L5</td><td>C4</td><td>W1</td><td>I4</td><td>SS</td><td>事实</td><td>业绩预告、半年报</td><td>半年报低于预告中枢</td><td>兑现窗口近</td><td>主攻支撑</td></tr>
+            <tr><td>星网锐捷</td><td>未提供代码</td><td>算力/交换机/业绩线</td><td>半年报预增公告</td><td>H5</td><td>L5</td><td>C4</td><td>W1</td><td>I4</td><td>SS</td><td>事实+风险</td><td>业绩预告、非经常损益拆分</td><td>半年报结构不佳</td><td>非经常项占比风险</td><td>主攻支撑</td></tr>
+            <tr><td>广钢气体</td><td>未提供代码</td><td>气体/业绩线</td><td>半年报预增公告</td><td>H5</td><td>L4</td><td>C3</td><td>W1</td><td>I3</td><td>S</td><td>事实</td><td>业绩预告、半年报</td><td>氦气贡献不及预期</td><td>板块扩散有限</td><td>弹性支撑</td></tr>
+            <tr><td>永和股份</td><td>未提供代码</td><td>业绩线</td><td>半年报预增公告</td><td>H5</td><td>L4</td><td>C3</td><td>W1</td><td>I3</td><td>S</td><td>事实</td><td>业绩预告、半年报</td><td>兑现偏弱</td><td>驱动细节未给出</td><td>弹性支撑</td></tr>
+            <tr><td>奥飞娱乐</td><td>未提供代码</td><td>IP/业绩线</td><td>半年报预增公告</td><td>H5</td><td>L3</td><td>C3</td><td>W1</td><td>I3</td><td>A</td><td>事实</td><td>业绩预告、利润结构</td><td>扣非偏弱或一次性收益扰动</td><td>高增质量待确认</td><td>观察</td></tr>
+            <tr><td>盐湖股份</td><td>未提供代码</td><td>锂盐/业绩线</td><td>半年报预增+碳酸锂期货对外开放</td><td>H5</td><td>L4</td><td>C3</td><td>W1</td><td>I3</td><td>S</td><td>事实+风险</td><td>业绩预告、广期所通知</td><td>锂价回落、成交不及预期</td><td>商品周期波动大</td><td>弹性支撑</td></tr>
+            <tr><td>沃华医药</td><td>未提供代码</td><td>中报时间线</td><td>7月16日率先披露</td><td>H4</td><td>L2</td><td>C3</td><td>W1</td><td>I2</td><td>B</td><td>事实</td><td>交易所预约披露表</td><td>披露内容平淡</td><td>时间先发不等于超预期</td><td>仅记录</td></tr>
+            <tr><td>优彩资源</td><td>未提供代码</td><td>中报时间线</td><td>7月16日率先披露</td><td>H4</td><td>L2</td><td>C3</td><td>W1</td><td>I2</td><td>B</td><td>事实</td><td>交易所预约披露表</td><td>披露内容平淡</td><td>同上</td><td>仅记录</td></tr>
+            <tr><td>昊志机电</td><td>未提供代码</td><td>中报时间线</td><td>7月21日创业板率先披露</td><td>H4</td><td>L2</td><td>C3</td><td>W1</td><td>I2</td><td>B</td><td>事实</td><td>交易所预约披露表</td><td>披露内容平淡</td><td>仅时间催化</td><td>仅记录</td></tr>
+            <tr><td>亚马逊</td><td>未提供代码</td><td>商业航天/海外参照</td><td>低轨卫星发射</td><td>H4</td><td>L3</td><td>C3</td><td>W2</td><td>I2</td><td>B</td><td>事实</td><td>官方发射信息</td><td>后续部署低于预期</td><td>对A股映射间接</td><td>仅记录</td></tr>
+            <tr><td>苹果</td><td>未提供代码</td><td>折叠屏/消费电子</td><td>折叠iPhone备货传闻</td><td>H2</td><td>L3</td><td>C4</td><td>W4</td><td>I4</td><td>A</td><td>传闻+推演</td><td>苹果官方、供应链公告</td><td>苹果澄清、量产推迟</td><td>供应链传闻易反转</td><td>需要公告验证</td></tr>
+            <tr><td>三星电子</td><td>未提供代码</td><td>半导体/海外参照</td><td>韩国投资、潜在代工合作、选择性接单</td><td>H3</td><td>L4</td><td>C4</td><td>W3</td><td>I3</td><td>A</td><td>事实+推演</td><td>外媒原文、公司口径</td><td>资本开支变化、接单口径变化</td><td>海外映射A股需二次确认</td><td>观察</td></tr>
+            <tr><td>SK海力士</td><td>未提供代码</td><td>HBM/半导体参照</td><td>韩国地区巨额投资</td><td>H3</td><td>L4</td><td>C4</td><td>W3</td><td>I3</td><td>A</td><td>事实+推演</td><td>投资计划、产能规划</td><td>投资落地不及预期</td><td>仅行业参照</td><td>观察</td></tr>
+            <tr><td>Anthropic</td><td>未提供代码</td><td>AI芯片/海外参照</td><td>自研AI芯片消息</td><td>H2</td><td>L3</td><td>C4</td><td>W4</td><td>I3</td><td>B</td><td>传闻+推演</td><td>公司声明、合作公告</td><td>官方否认、代工无下文</td><td>尚未正式确认</td><td>需要公告验证</td></tr>
+            <tr><td>软银</td><td>未提供代码</td><td>Neocloud/算力参照</td><td>计划推出新云并部署10GW AI基础设施</td><td>H3</td><td>L4</td><td>C4</td><td>W3</td><td>I4</td><td>A</td><td>事实+推演</td><td>公司计划、发布会、资本开支</td><td>计划延后、规模缩水</td><td>远期规划兑现慢</td><td>观察</td></tr>
+            <tr><td>ASML</td><td>未提供代码</td><td>半导体设备参照</td><td>上调全年营收指引</td><td>H4</td><td>L4</td><td>C4</td><td>W2</td><td>I3</td><td>A</td><td>事实</td><td>公司指引、财报</td><td>指引回落、订单转弱</td><td>海外设备景气不必然等于A股同步</td><td>观察</td></tr>
+            <tr><td>OpenAI</td><td>未提供代码</td><td>AI芯片参照</td><td>文中被用作Anthropic效仿对象</td><td>H1</td><td>L2</td><td>C3</td><td>W4</td><td>I2</td><td>C</td><td>观点+类比</td><td>原始报道</td><td>类比失效、官方无动作</td><td>只是类比对象</td><td>仅记录</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>表三：降级/排雷表</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>股票/方向</th>
+              <th>原始逻辑</th>
+              <th>降级原因</th>
+              <th>冲突证据</th>
+              <th>当前处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>豆包视频模型</td><td>预计7月6日上线体验中心并开放API</td><td>无正式公告，时间点属于预期口径</td><td>文章仅写“预计”，未附官方发布</td><td>需要公告验证</td></tr>
+            <tr><td>折叠屏/苹果</td><td>备货1000万台、秋季后即发货</td><td>典型供应链传闻，真实性与节奏都未锁定</td><td>无苹果官方确认、无供应链A股公告</td><td>需要公告验证</td></tr>
+            <tr><td>商业航天/回收船</td><td>航天大V晒图可推升板块</td><td>图片与自媒体内容证据弱</td><td>仅“大V晒图”，非正式通稿</td><td>降级</td></tr>
+            <tr><td>出海爆单/农机</td><td>国产拖拉机热销海外可推演行业爆发</td><td>未给公司、数据、订单口径</td><td>无海关数据、无公司公告</td><td>降级</td></tr>
+            <tr><td>出海爆单/变压器</td><td>新基建出海带来全球爆单</td><td>标题情绪化，缺公司与量化数据</td><td>无订单公告、无出口数据</td><td>降级</td></tr>
+            <tr><td>算力过剩叙事</td><td>Meta带崩科技股，算力过剩</td><td>已被权威媒体辟谣，原始叙事失效</td><td>官方/权威媒体辟谣</td><td>排雷</td></tr>
+            <tr><td>Anthropic自研芯片</td><td>自研芯片并与三星谈判将强化产业链</td><td>属海外消息，未见正式合作落地</td><td>无合作公告，仅新闻口径</td><td>观察</td></tr>
+            <tr><td>宇树映射A股</td><td>宇树IPO即可直接强化A股机器人映射</td><td>宇树本身非A股，文章未给A股映射链</td><td>无对应A股公司公告或订单验证</td><td>观察</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>四、自检结果</h2>
+      <ul>
+        <li>是否遗漏文章中出现的股票：已尽量覆盖文中出现的公司主体；未将“豆包/广期所”这类非股票主体误写入股票表。</li>
+        <li>是否编造股票代码：否，均写“未提供代码”。</li>
+        <li>是否编造公司业务：否，未补写文中未提供的业务细节。</li>
+        <li>是否把小作文当成事实：否，已将“预计上线”“折叠屏备货”“爆单”“晒图”等降级处理。</li>
+        <li>是否把复盘观点当成公司事实：否，复盘口径仅作为情绪/推演处理。</li>
+        <li>是否把 H 证据硬度当成最终评级：否，最终评级按 H/L/C/W/I 综合给出。</li>
+        <li>是否把 W 证伪窗口当成真实性：否，W 仅用于叙事持续性判断。</li>
+        <li>是否因为不可证伪就无条件提高评级：否，传闻类均同时检查了 L 和 C。</li>
+        <li>是否给出买卖建议/目标价/仓位建议：否。</li>
+        <li>是否对每条高风险资讯给出证伪触发点：是。</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
