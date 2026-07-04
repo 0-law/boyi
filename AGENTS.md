@@ -41,6 +41,9 @@
 11_资讯裁判自检清单.md
 12_资讯裁判样例输出.md
 13_真实资讯测试规则.md
+14_采集输入格式规范.md
+16_个股候选逻辑字段规范.md
+17_双结果封装规范.md
 ```
 
 ---
@@ -77,6 +80,8 @@ I：影响力预期
 9. 与公告、监管、澄清信息冲突的传闻必须降级。
 10. AI 推理不是证据，只能作为辅助整理。
 11. OCR 和图片识别文字默认低置信，除非有明确来源。
+12. 不得把“预计 / 拟 / 计划 / 有望 / 或将 / 据悉 / 消息称 / 知情人士 / 网传 / 爆料”直接写成事实。
+13. 没有盘面数据时，不得输出已兑现、已部分兑现、高开低走、冲高回落、放量滞涨、资金承接强等盘面结论。
 
 ---
 
@@ -87,50 +92,39 @@ I：影响力预期
 ```text
 source_time：资讯原始发布时间
 source_time_precision：原始发布时间精度
+source_session：资讯发生时段
 ingest_time：系统获得 / 抓取 / 导入该资讯的时间
+ingest_session：系统处理该资讯时所处时段
 analysis_time：AI 实际裁判该资讯的时间
 timezone：统一时区
+timeliness_status：时效状态
 ```
 
-正式运行中，短线时段判断优先使用 `ingest_time`。
-
-如果 `source_time` 缺失，写 `null`。
-如果 `source_time_precision` 缺失，写 `unknown`。
-如果 `ingest_time` 缺失，写 `null`。
-如果 `analysis_time` 缺失，写 `null`。
-`timezone` 默认写 `Asia/Shanghai`。
-
-不得编造时间。
-不得在没有依据时猜测盘前、盘中、盘后。
-
-## 时段属性
+采集输入格式详见：
 
 ```text
-盘前
-盘中
-盘后
-非交易日
-无法判断
+资讯裁判模块/14_采集输入格式规范.md
 ```
 
-## 时效状态
+字段规则：
 
-```text
-新增资讯
-延迟获取
-旧闻重抓
-盘中异动解释
-盘后预期
-待盘面验证
-已部分兑现
-无法判断
-```
+1. `source_time` 缺失时写 `null`。
+2. `source_time_precision` 只使用 `minute / hour / daypart / date / unknown`。
+3. `source_session` 只使用 `盘前 / 盘中 / 盘后 / 夜间 / 非交易日 / unknown`。
+4. `ingest_session` 只使用 `交易日盘前 / 交易日盘中 / 交易日盘后 / 非交易日 / unknown`。
+5. `timeliness_status` 只使用 `实时 / 延迟获取 / 旧闻重抓 / 已过催化窗口 / 待盘面验证 / unknown`。
+6. `source_session` 反映资讯原始发生时间，不得被 `ingest_time` 覆盖。
+7. `ingest_session` 只反映系统何时拿到这条资讯。
+8. `analysis_time` 缺失时写 `null`。
+9. `timezone` 默认写 `Asia/Shanghai`。
+10. 不得编造时间，不得在没有依据时猜测盘前、盘中、盘后或夜间。
+11. 正式运行中，短线时效判断可以参考 `ingest_time`，但不得据此改写 `source_session`。
 
-## 时间影响评级原则
+时间影响评级原则：
 
 ```text
 时间不改变 H 证据硬度。
-时间主要影响 C 环境适配、W 证伪窗口、I 影响力预期和处理结果。
+时间主要影响 C 环境适配、W 证伪窗口、I 影响力预期、timeliness_status 和处理结果。
 ```
 
 ---
@@ -189,39 +183,18 @@ timezone：统一时区
 
 ---
 
-## Markdown 时间元数据规则
+## 个股展示规则
 
-Markdown 格式资讯可以继续使用，但每条资讯必须尽量带结构化时间元数据。
-
-统一要求：
-
-```text
-ISO 8601 时间格式 + UTC+08 时区
-默认时区：Asia/Shanghai
-```
-
-标准字段：
-
-```yaml
-source_time: 2026-07-03T09:12:00+08:00
-source_time_precision: minute
-ingest_time: 2026-07-03T09:14:31+08:00
-analysis_time: null
-timezone: Asia/Shanghai
-```
-
-补充要求：
-
-1. `source_time` 表示资讯原始发布时间，缺失时写 `null`。
-2. `source_time_precision` 必须使用固定枚举：
-   `second / minute / hour / date / daypart_morning / daypart_noon / daypart_afternoon / daypart_night / range / unknown`。
-3. `ingest_time` 表示系统获得 / 抓取 / 导入资讯的时间，正式运行时应尽量精确到秒。
-4. `analysis_time` 表示 AI 实际执行裁判时间，缺失时写 `null`。
-5. `timezone` 默认写 `Asia/Shanghai`。
-6. 原文只有日期时，只保留日期，不得强行补时分秒。
-7. 原文没有发布时间时，不得猜测具体时间。
-8. 时段属性判断优先级固定为：`ingest_time > source_time > 无法判断`。
-9. 时间不会改变 H 证据硬度，只影响 C / W / I、时段属性、时效状态和处理结果。
+1. `对应个股` 字段不得出现 Markdown 链接、本地绝对路径、空链接或占位链接。
+2. Markdown 表格中统一写成“主体名称（代码/状态）”。
+3. 可接受示例：
+   `锐捷网络（301165）`
+   `昆仑万维（300418）`
+   `宇树科技（未上市）`
+   `苹果（美股，A股映射待验证）`
+   `Anthropic（未上市，A股映射待验证）`
+4. 明确识别为 A 股上市公司的，允许根据股票名称补齐唯一对应的 6 位 A 股代码。
+5. 无法唯一确认、疑似非 A 股主体或存在歧义时，股票代码留空，不得强补。
 
 ---
 
@@ -232,13 +205,15 @@ timezone: Asia/Shanghai
 1. 不得输出买卖建议。
 2. 不得输出目标价。
 3. 不得输出仓位建议。
-4. 不得编造股票代码。
+4. 不得臆造或错误映射股票代码；允许在明确识别为 A 股上市公司的前提下，根据股票名称补齐唯一对应的 6 位 A 股代码。无法唯一确认、疑似非 A 股主体或存在歧义时，股票代码留空。
 5. 不得编造公司业务。
 6. 不得把小作文写成事实。
 7. 不得把 AI 推理写成证据。
 8. 不得把 H 证据硬度当成最终短线评级。
 9. 不得把 W 证伪窗口当成真实性。
 10. 不得因为信息不可证伪就无条件提高评级。
+11. 没有盘面数据时，不得输出盘面验证结论。
+12. 海外主体、未上市主体、海外政策或产业新闻，在没有明确 A 股订单、公告、业绩或盘面验证前，不得直接给到 `SS`。
 
 ---
 
@@ -306,42 +281,11 @@ README.md
 所有“资讯裁判表”必须使用统一表头：
 
 ```markdown
-| source_time | source_time_precision | ingest_time | analysis_time | timezone | 时段属性 | 时效状态 | 来源类型 | 摘要 | 对应方向 | 对应个股 | 主体类型 | 信息性质 | 催化类型 | 影响级别 | H证据硬度 | L逻辑合理性 | C环境适配 | W证伪窗口 | I影响预期 | 最终评级 | 验证点 | 证伪触发点 | 降级风险 | 处理结果 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| source_time | source_time_precision | source_session | ingest_time | ingest_session | analysis_time | timezone | timeliness_status | 来源类型 | 摘要 | 对应方向 | 对应个股 | 主体类型 | 信息性质 | 催化类型 | 影响级别 | H证据硬度 | L逻辑合理性 | C环境适配 | W证伪窗口 | I影响预期 | 最终评级 | 验证点 | 证伪触发点 | 原文逻辑疑点 | 疑点说明 | 降级风险 | 处理结果 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 ```
 
 不得在不同文件中使用不同表头。
-
----
-
-## 采集端建议字段
-
-未来采集端建议为每条资讯提供：
-
-```json
-{
-  "source_time": "资讯原始发布时间，若无则为空",
-  "source_time_precision": "原始时间精度，缺失时为 unknown",
-  "ingest_time": "系统采集/导入时间，正式运行必须提供",
-  "analysis_time": "AI 实际裁判时间，可为空",
-  "timezone": "默认 Asia/Shanghai",
-  "source_name": "来源名称",
-  "source_type_hint": "来源类型提示，可为空",
-  "source_url": "原文链接，可为空",
-  "raw_title": "原始标题",
-  "raw_text": "原始正文",
-  "collector": "采集器名称，可为空"
-}
-```
-
-说明：
-- `source_time` 是资讯发布的时间。
-- `source_time_precision` 用于标记原始时间精度，不能乱补时分秒。
-- `ingest_time` 是系统知道这条资讯的时间。
-- `analysis_time` 用于分析追溯，不直接决定短线影响力。
-- `timezone` 默认统一为 `Asia/Shanghai`。
-- 短线系统优先使用 `ingest_time` 作为有效进入系统时间。
-- 若 `source_time` 缺失，不得由 AI 猜测。
 
 ---
 
@@ -358,8 +302,9 @@ README.md
 7. 是否新增了交易建议、目标价、仓位建议。
 8. 是否把小作文写成事实。
 9. 是否把证伪窗口写成真实性。
-10. 是否遗漏 `source_time / source_time_precision / ingest_time / analysis_time / timezone` 统一时间字段。
-11. 是否在没有依据时编造盘前、盘中、盘后或具体时间。
+10. 是否遗漏 `source_time / source_time_precision / source_session / ingest_time / ingest_session / analysis_time / timezone / timeliness_status` 统一时间字段。
+11. 是否在没有依据时编造盘前、盘中、盘后、夜间或具体时间。
+12. 是否对明确 A 股股票名称补齐唯一股票代码，并避免对非 A 股主体、歧义主体或无法确认主体错误补码。
 
 ---
 
